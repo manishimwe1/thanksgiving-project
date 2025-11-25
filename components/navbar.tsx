@@ -1,116 +1,183 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Cpu } from 'lucide-react';
+import { Mail, MapPin, Menu, Phone, X, Zap } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface NavbarProps {
-  onOpenDiagnostic: () => void;
+  onOpenDiagnostic?: () => void;
 }
 
-export const Navbar = () => {
+export const Navbar = ({ onOpenDiagnostic }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Contact", href: "/contact" },
   ];
-  
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
-        isScrolled
-          ? 'bg-white/90 backdrop-blur-md border-slate-200 py-3 shadow-sm'
-          : 'bg-transparent border-transparent py-5'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <div className="flex items-center gap-2 group cursor-pointer">
-            <div className="bg-blue-600 text-white p-2 rounded-lg transform group-hover:rotate-12 transition-transform duration-300">
-                <Cpu size={24} />
-            </div>
-            <div className="flex flex-col">
-              <span className={`text-xl font-bold tracking-tight ${isScrolled ? 'text-slate-900' : 'text-slate-900'}`}>
-                AUGU
-              </span>
-              <span className="text-[10px] font-medium text-blue-600 uppercase tracking-wider">
-                Smart Service
-              </span>
+    <>
+      {/* 1. TOP BAR (Contact Info) - Disappears on scroll for cleaner look */}
+      <div
+        className={`bg-slate-900 text-slate-300 text-xs w-full py-3 transition-all duration-300 hidden md:block ${
+          isScrolled ? "-mt-10" : "mt-0"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+          <div className="flex items-center gap-6">
+            <a
+              href="mailto:augstintech2015@gmail.com"
+              className="flex items-center gap-2 hover:text-white transition-colors"
+            >
+              <Mail size={14} className="text-blue-500" />
+              <span>augstintech2015@gmail.com</span>
+            </a>
+            <div className="flex items-center gap-2">
+              <MapPin size={14} className="text-blue-500" />
+              <span>Kigali, Rwanda</span>
             </div>
           </div>
-
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
-            <button
-            //   onClick={onOpenDiagnostic}
-              className="bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 active:scale-95 flex items-center gap-2"
+          <div className="flex items-center gap-4 ml-4">
+            <span className="opacity-60">Need urgent repairs?</span>
+            <a
+              href="tel:+250788434238"
+              className="flex items-center gap-2 font-bold text-white hover:text-blue-400 transition-colors"
             >
-              <span>Get AI Quote</span>
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-slate-600 hover:text-blue-600 p-2"
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+              <Phone size={14} />
+              <span>0788 434 238</span>
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-slate-100 absolute w-full shadow-xl">
-          <div className="px-4 pt-2 pb-6 space-y-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="block px-3 py-3 text-base font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-50 rounded-md"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-            <div className="pt-4">
+      {/* 2. MAIN NAVBAR */}
+      <nav
+        className={`sticky top-0 w-full z-50 transition-all duration-300 border-b ${
+          isScrolled
+            ? "bg-white backdrop-blur-xl border-white/20 py-2 shadow-lg"
+            : "bg-white backdrop-blur-lg border-white/10 py-4 shadow-md"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center">
+            {/* LOGO SECTION */}
+            <Link href="/" className="relative flex items-center gap-2 group">
+              {/* 
+                  Using a fixed height container for the logo ensures 
+                  it doesn't break the layout, while 'object-contain' 
+                  keeps the logo aspect ratio correct.
+               */}
+              <div className="relative h-12 w-48 md:h-14 md:w-[250px] transition-all duration-300 rounded-2xl overflow-hidden">
+                <Image
+                  src="/logo3.png" // Ensure this matches your file name exactly
+                  alt="AUGU Smart Electronic Service"
+                  fill
+                  className="object-contain object-left"
+                  priority
+                  
+                />
+              </div>
+            </Link>
+
+            {/* DESKTOP NAVIGATION */}
+            <div className="hidden md:flex items-center gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-blue-600 rounded-full hover:bg-blue-50 transition-all"
+                >
+                  {link.name}
+                </Link>
+              ))}
+
+              <div className="ml-4 pl-4 border-l border-slate-200">
+                <button
+                  //   onClick={onOpenDiagnostic}
+                  className="flex items-center gap-2 bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-blue-600/20 hover:bg-blue-700 hover:scale-[1.02] transition-all"
+                >
+                  <Zap size={16} fill="currentColor" />
+                  <span>Get Quote</span>
+                </button>
+              </div>
+            </div>
+
+            {/* MOBILE MENU TOGGLE */}
+            <div className="md:hidden">
               <button
-                onClick={() => {
-                //   onOpenDiagnostic();
-                  setIsMobileMenuOpen(false);
-                }}
-                className="w-full bg-blue-600 text-white px-5 py-3 rounded-lg text-center font-semibold hover:bg-blue-700"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="p-2 text-slate-600 hover:text-blue-600 hover:bg-slate-100 rounded-lg transition-colors"
               >
-                Get AI Quote
+                {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
             </div>
           </div>
         </div>
-      )}
-    </nav>
+
+        {/* MOBILE MENU DROPDOWN */}
+        <div
+          className={`md:hidden absolute w-full bg-white border-b border-slate-100 shadow-xl transition-all duration-300 ease-in-out origin-top ${
+            isMobileMenuOpen
+              ? "opacity-100 scale-y-100"
+              : "opacity-0 scale-y-0 h-0"
+          }`}
+        >
+          <div className="px-4 pt-2 pb-6 space-y-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="block px-4 py-3 text-base font-semibold text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-xl"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            <div className="pt-4 mt-4 border-t border-slate-100">
+              <div className="flex flex-col gap-3">
+                <button
+                  // onClick={onOpenDiagnostic}
+                  className="w-full bg-blue-600 text-white px-5 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2"
+                >
+                  <Zap size={18} /> Get AI Quote
+                </button>
+
+                {/* Mobile Contact Quick Links */}
+                <div className="grid grid-cols-2 gap-3 mt-2">
+                  <a
+                    href="tel:+250788434238"
+                    className="flex items-center justify-center gap-2 py-3 border border-slate-200 rounded-xl text-slate-700 font-semibold text-sm"
+                  >
+                    <Phone size={16} /> Call Us
+                  </a>
+                  <a
+                    href="https://wa.me/250788434238"
+                    className="flex items-center justify-center gap-2 py-3 border border-slate-200 rounded-xl text-slate-700 font-semibold text-sm"
+                  >
+                    WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </>
   );
 };
