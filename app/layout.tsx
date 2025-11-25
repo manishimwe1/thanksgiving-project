@@ -18,19 +18,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "/logo2.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "/logo2.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
+        url: "/logo2.png",
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/logo2.png",
   },
   openGraph: {
     title:
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/professional-technology-repair-team-working-in-mod.jpg", // Use existing high-quality public image
+        url: "/logo2.png", // Use existing high-quality public image
         width: 1200,
         height: 630,
         alt: "AUGU's professional tech repair team working",
