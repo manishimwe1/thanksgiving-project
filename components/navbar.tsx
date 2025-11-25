@@ -7,7 +7,7 @@ interface NavbarProps {
   onOpenDiagnostic: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenDiagnostic }) => {
+export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -20,10 +20,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDiagnostic }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
   ];
   
 
@@ -64,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDiagnostic }) => {
               </a>
             ))}
             <button
-              onClick={onOpenDiagnostic}
+            //   onClick={onOpenDiagnostic}
               className="bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 active:scale-95 flex items-center gap-2"
             >
               <span>Get AI Quote</span>
@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDiagnostic }) => {
             <div className="pt-4">
               <button
                 onClick={() => {
-                  onOpenDiagnostic();
+                //   onOpenDiagnostic();
                   setIsMobileMenuOpen(false);
                 }}
                 className="w-full bg-blue-600 text-white px-5 py-3 rounded-lg text-center font-semibold hover:bg-blue-700"

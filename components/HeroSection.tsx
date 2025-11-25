@@ -1,89 +1,96 @@
-import { ArrowRight, ShieldCheck, ShieldCheckIcon, Zap } from "lucide-react";
+import { ArrowRight, Check, Phone, ShieldCheck, Star } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
-const HeroSection = () => {
+const HeroClean = () => {
   return (
-    <section className="relative pt-28 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-blue-100/50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-cyan-100/50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-          {/* Text Content */}
-          <div className="mb-12 lg:mb-0 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide mb-6">
-              <ShieldCheck size={14} />
-              <span>Kigali's Most Trusted Tech Experts</span>
+    <section className="relative bg-white pt-28 pb-20 lg:pt-36 lg:pb-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="lg:grid lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Text Content - Spans 7 cols */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left">
+            
+            <div className="flex items-center gap-2 mb-6 bg-orange-50 px-3 py-1 rounded-full border border-orange-100">
+                <div className="flex -space-x-2">
+                   {/* Placeholder avatars - replace with real images if available */}
+                   <div className="w-6 h-6 rounded-full bg-slate-300 border-2 border-white"></div>
+                   <div className="w-6 h-6 rounded-full bg-slate-400 border-2 border-white"></div>
+                   <div className="w-6 h-6 rounded-full bg-slate-500 border-2 border-white"></div>
+                </div>
+                <span className="text-xs font-bold text-orange-700">Trusted by 500+ locals in Kigali</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
-              Professional <br />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-cyan-500">
-                Electronics & IT
+            <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
+              Expert Repairs for <br />
+              <span className="relative whitespace-nowrap text-blue-600">
+                <span className="relative">Modern Devices</span>
+                {/* Underline svg decoration */}
+                <svg className="absolute -bottom-2 left-0 w-full h-3 text-blue-200 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
+                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
+                </svg>
               </span>
-              <br /> Solutions
             </h1>
 
-            <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              From expert computer repair and CCTV installation to enterprise
-              networking. We provide fast, reliable technology services for
-              businesses and individuals across Rwanda.
+            <p className="text-lg text-slate-600 mb-8 max-w-2xl leading-relaxed">
+              Don't let broken tech slow you down. We provide professional diagnostics and repair for laptops, smartphones, CCTV systems, and networking gear.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button
-                // onClick={()=>{}}
-                className="flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold shadow-xl shadow-blue-600/20 hover:bg-blue-700 hover:scale-[1.02] transition-all"
-              >
-                <Zap size={20} />
-                Request services
+            <div className="w-full flex flex-col sm:flex-row gap-4 mb-10">
+              <button className="flex-1 sm:flex-none flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/20">
+                Get a Free Quote
+                <ArrowRight size={18} />
               </button>
-              <a
-                href="#services"
-                className="flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 hover:border-slate-300 transition-all"
-              >
-                View Services
-                <ArrowRight size={20} />
+              <a href="tel:+250000000" className="flex-1 sm:flex-none flex items-center justify-center gap-3 bg-white text-slate-700 border-2 border-slate-100 px-8 py-4 rounded-xl font-bold hover:border-blue-600 hover:text-blue-600 transition-all group">
+                <Phone size={18} className="text-slate-400 group-hover:text-blue-600" />
+                Call Technician
               </a>
             </div>
-          </div>
 
-          {/* Visual Content */}
-          <div className="relative mx-auto lg:ml-auto w-full max-w-lg lg:max-w-none">
-            {/* Main Image Container */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-900 aspect-4/3 group">
-              {/* <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent z-10"></div> */}
-              <Image
-                src="/printer.jpeg"
-                alt="Technician repairing motherboard"
-                fill
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-              />
-
-              {/* Floating Badge 1 */}
-              <div className="absolute bottom-6 left-6 z-20 bg-black/40 backdrop-blur-md border border-white/20 p-4 rounded-xl flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white">
-                  <ShieldCheckIcon size={20} />
-                </div>
-                <div>
-                  <p className="text-xs text-white/80">Warranty Included</p>
-                  <p className="text-sm font-bold text-white">
-                    30 Day Guarantee
-                  </p>
-                </div>
-              </div>
+            {/* Service Tags */}
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-slate-500">
+                {['No Fix, No Fee', '90-Day Warranty', 'Original Parts'].map((item, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                        <div className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">
+                            <Check size={12} strokeWidth={4} />
+                        </div>
+                        {item}
+                    </div>
+                ))}
             </div>
-
-            {/* Floating Decorative Elements */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-600 rounded-2xl -z-10 animate-pulse opacity-20"></div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 border-2 border-dashed border-slate-300 rounded-full -z-10"></div>
           </div>
+
+          {/* Image Content - Spans 5 cols */}
+          <div className="lg:col-span-5 mt-12 lg:mt-0 relative">
+             <div className="relative rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 ease-out border-4 border-white">
+                <Image
+                    src="/printer.jpeg"
+                    alt="Technician working"
+                    width={600}
+                    height={700}
+                    className="w-full h-full object-cover"
+                />
+                {/* Floating Rating Card */}
+                <div className="absolute top-6 right-6 bg-white p-4 rounded-xl shadow-lg flex flex-col items-center border border-slate-100">
+                    <div className="flex text-yellow-400 mb-1">
+                        <Star size={16} fill="currentColor" />
+                        <Star size={16} fill="currentColor" />
+                        <Star size={16} fill="currentColor" />
+                        <Star size={16} fill="currentColor" />
+                        <Star size={16} fill="currentColor" />
+                    </div>
+                    <span className="text-xs font-bold text-slate-900">Top Rated Service</span>
+                </div>
+             </div>
+             
+             {/* Background Blob */}
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-100/50 rounded-full blur-3xl -z-10"></div>
+          </div>
+
         </div>
       </div>
     </section>
   );
 };
 
-export default HeroSection;
+export default HeroClean;

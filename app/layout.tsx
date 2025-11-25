@@ -1,15 +1,17 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
+import { Navbar } from "@/components/navbar";
 
 // <CHANGE> Updated font to Inter for professional look
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 // <CHANGE> Updated metadata for AUGU company
 export const metadata: Metadata = {
-  title: "AUGU Smart Electronic Service Ltd - Professional Tech Solutions in Kigali",
+  title:
+    "AUGU Smart Electronic Service Ltd - Professional Tech Solutions in Kigali",
   description:
     "Reliable, Fast, and Professional Tech Solutions. Computer repair, CCTV installation, networking, printer repair, and training in Kigali, Rwanda.",
   generator: "v0.app",
@@ -30,19 +32,40 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
-}
+  openGraph: {
+    title:
+      "AUGU Smart Electronic Service Ltd - Professional Tech Solutions in Kigali",
+    description:
+      "Reliable, Fast, and Professional Tech Solutions. Computer repair, CCTV installation, networking, printer repair, and training in Kigali, Rwanda.",
+    url: 'https://augu-smart-electronics.vercel.app/', // Replace with actual domain
+    type: "website",
+    images: [
+      {
+        url: "/professional-technology-repair-team-working-in-mod.jpg", // Use existing high-quality public image
+        width: 1200,
+        height: 630,
+        alt: "AUGU's professional tech repair team working",
+      },
+    ],
+  },
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={`${inter.className} font-sans antialiased`}>
-        {children}
+        <main className="flex items-center flex-col w-full h-full">
+          {/* <Header /> */}
+          <Navbar />
+
+          {children}
+        </main>
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
