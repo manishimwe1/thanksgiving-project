@@ -1,4 +1,4 @@
-import { Header } from "@/components/header"
+import type { Metadata } from "next"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { Card, CardContent } from "@/components/ui/card"
@@ -19,6 +19,12 @@ import {
   Settings,
   Users,
 } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Our Services - AUGU Smart Electronic Service Ltd | Computer Repair, CCTV, Networking in Kigali",
+  description:
+    "Explore the comprehensive tech solutions offered by AUGU Smart Electronic Service Ltd, including computer repair, laptop repair, printer repair, CCTV installation, networking, and professional IT training in Kigali, Rwanda.",
+}
 
 export default function ServicesPage() {
   const services = [
@@ -121,7 +127,6 @@ export default function ServicesPage() {
 
   return (
     <>
-      <Header />
       <main>
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-primary/10 via-background to-accent/10 py-16 md:py-24">

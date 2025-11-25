@@ -1,186 +1,58 @@
-[00:00:33.473] Server  LOG      ✓ Ready in 19.4s
-[00:00:36.531] Server  LOG      ○ Compiling / ...
-[00:01:05.763] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:06.582] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:01:06.582] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:01:06.582] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763975748617}
-[00:31:22.161] Server  ERROR   D:\Builds\augu-smart-electronic-service\.next\dev\server\chunks\ssr\[root-of-the-server]__3296e019._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:31:22.166] Server  ERROR    ⨯ ReferenceError: ShieldCheck is not defined
-[00:31:22.178] Server  LOG      ✓ Compiled in 489ms
-[00:31:22.711] Browser ERROR   uncaughtError: ReferenceError: ShieldCheck is not defined
-[00:32:43.659] Server  ERROR   D:\Builds\augu-smart-electronic-service\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:32:43.704] Server  ERROR    ⨯ Error: Event handlers cannot be passed to Client Component props.
-  <button onClick={function onClick} className=... children=...>
-                  ^^^^^^^^^^^^^^^^^^
-If you need interactivity, consider converting part of this to a Client Component.
-[00:32:44.735] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:32:45.136] Browser ERROR   uncaughtError: Error: Event handlers cannot be passed to Client Component props.
-  <button onClick={function onClick} className=... children=...>
-                  ^^^^^^^^^^^^^^^^^^
-If you need interactivity, consider converting part of this to a Client Component.
-[00:32:57.613] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:32:57.886] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:32:57.886] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:32:57.886] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763977660381}
-[00:33:50.841] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:33:57.963] Browser LOG     [Vercel Web Analytics] Failed to load script from https://va.vercel-scripts.com/v1/script.debug.js. Please check if any ad blockers are enabled and try again.
-[00:37:37.891] Server  LOG      ○ Compiling /_error ...
-[00:37:40.120] Browser ERROR   uncaughtError: Error: ./components/navbar.tsx:1:27
-Ecmascript file had an error
-> 1 | import React, { useState, useEffect } from 'react';
-    |                           ^^^^^^^^^
-  2 | import { Menu, X, Cpu } from 'lucide-react';
-  3 |
-  4 | interface NavbarProps {
-
-You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
-
- Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
-
-
-
-Import trace:
-  Server Component:
-    ./components/navbar.tsx
-    ./app/page.tsx
-
-
-[00:37:40.322] Browser ERROR   ./components/navbar.tsx:1:27
-Ecmascript file had an error
-> 1 | import React, { useState, useEffect } from 'react';
-    |                           ^^^^^^^^^
-  2 | import { Menu, X, Cpu } from 'lucide-react';
-  3 |
-  4 | interface NavbarProps {
-
-You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
-
- Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
-
-Import trace:
-  Server Component:
-    ./components/navbar.tsx
-    ./app/page.tsx
-[00:37:40.322] Browser ERROR   ./components/navbar.tsx:1:17
-Ecmascript file had an error
-> 1 | import React, { useState, useEffect } from 'react';
-    |                 ^^^^^^^^
-  2 | import { Menu, X, Cpu } from 'lucide-react';
-  3 |
-  4 | interface NavbarProps {
-
-You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
-
- Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
-
-Import trace:
-  Server Component:
-    ./components/navbar.tsx
-    ./app/page.tsx
-[00:37:40.434] Browser ERROR   ./components/navbar.tsx:1:27
-Ecmascript file had an error
-> 1 | import React, { useState, useEffect } from 'react';
-    |                           ^^^^^^^^^
-  2 | import { Menu, X, Cpu } from 'lucide-react';
-  3 |
-  4 | interface NavbarProps {
-
-You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
-
- Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
-
-Import trace:
-  Server Component:
-    ./components/navbar.tsx
-    ./app/page.tsx
-[00:37:40.434] Browser ERROR   ./components/navbar.tsx:1:17
-Ecmascript file had an error
-> 1 | import React, { useState, useEffect } from 'react';
-    |                 ^^^^^^^^
-  2 | import { Menu, X, Cpu } from 'lucide-react';
-  3 |
-  4 | interface NavbarProps {
-
-You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
-
- Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
-
-Import trace:
-  Server Component:
-    ./components/navbar.tsx
-    ./app/page.tsx
-[00:38:04.412] Server  LOG      ✓ Compiled in 139ms
-[00:38:05.272] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:38:19.487] Browser LOG     [Vercel Web Analytics] Failed to load script from https://va.vercel-scripts.com/v1/script.debug.js. Please check if any ad blockers are enabled and try again.
-[00:38:19.853] Server  ERROR   D:\Builds\augu-smart-electronic-service\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:38:19.870] Server  ERROR    ⨯ Error: Event handlers cannot be passed to Client Component props.
-  <... onOpenDiagnostic={function onOpenDiagnostic}>
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you need interactivity, consider converting part of this to a Client Component.
-[00:38:20.757] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:38:20.951] Browser ERROR   uncaughtError: Error: Event handlers cannot be passed to Client Component props.
-  <... onOpenDiagnostic={function onOpenDiagnostic}>
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you need interactivity, consider converting part of this to a Client Component.
-[00:39:20.792] Server  ERROR   D:\Builds\augu-smart-electronic-service\node_modules\.pnpm\next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:39:20.794] Server  ERROR    ⨯ Error: Event handlers cannot be passed to Client Component props.
-  <... onOpenDiagnostic={function onOpenDiagnostic}>
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you need interactivity, consider converting part of this to a Client Component.
-[00:39:21.678] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:39:21.934] Browser ERROR   uncaughtError: Error: Event handlers cannot be passed to Client Component props.
-  <... onOpenDiagnostic={function onOpenDiagnostic}>
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you need interactivity, consider converting part of this to a Client Component.
-[00:39:52.457] Server  LOG      ✓ Compiled in 682ms
-[00:39:52.596] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:39:52.932] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:40:21.529] Server  LOG      ✓ Compiled in 851ms
-[00:40:24.322] Browser LOG     [Vercel Web Analytics] Failed to load script from https://va.vercel-scripts.com/v1/script.debug.js. Please check if any ad blockers are enabled and try again.
-[00:41:42.734] Server  LOG      ✓ Compiled in 317ms
-[00:42:12.845] Server  LOG      ✓ Compiled in 297ms
-[01:39:34.625] Server  LOG      ✓ Compiled in 381ms
-[01:39:34.707] Browser LOG     {"0":"[","1":"o","10":"j","11":"e","12":"c","13":"t","14":"]","2":"b","3":"j","4":"e","5":"c","6":"t","7":" ","8":"O","9":"b"}
-[01:39:34.707] Browser LOG     {"0":"[","1":"o","10":"j","11":"e","12":"c","13":"t","14":"]","2":"b","3":"j","4":"e","5":"c","6":"t","7":" ","8":"O","9":"b"}
-[01:39:34.708] Browser LOG     {"0":"[","1":"o","10":"j","11":"e","12":"c","13":"t","14":"]","2":"b","3":"j","4":"e","5":"c","6":"t","7":" ","8":"O","9":"b"}
-[01:39:34.708] Browser LOG     {"0":"[","1":"o","10":"j","11":"e","12":"c","13":"t","14":"]","2":"b","3":"j","4":"e","5":"c","6":"t","7":" ","8":"O","9":"b"}
-[02:54:53.069] Server  LOG      ✓ Compiled in 162ms
-[02:55:19.777] Server  LOG      ✓ Compiled in 371ms
-[03:01:33.483] Server  LOG      ✓ Compiled in 277ms
-[03:01:40.050] Server  LOG      ✓ Compiled in 221ms
-[03:04:12.586] Browser ERROR   uncaughtError: Error: Image with src "/printer.jpeg" is missing required "width" property.
-[03:04:47.092] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[03:04:47.094] Server  LOG      ✓ Compiled in 324ms
-[03:04:49.244] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:04:49.527] Browser WARN    Image with src "/printer.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[00:01:53.894] Server  LOG      ✓ Ready in 43.9s
+[00:01:57.081] Server  LOG      ○ Compiling /_not-found/page ...
+[00:03:25.598] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:03:26.677] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:29.220] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:03:29.220] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[00:03:29.220] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764057324308}
+[00:09:38.098] Server  LOG      ○ Compiling / ...
+[00:09:52.204] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:52.660] Browser WARN    Image with src "/printer.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[03:04:50.485] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:04:50.486] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[03:04:50.486] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763986772981}
-[03:05:05.708] Server  LOG      ✓ Compiled in 229ms
-[03:05:27.639] Server  LOG      ✓ Compiled in 280ms
-[03:05:31.822] Server  LOG      ✓ Compiled in 141ms
-[03:06:00.852] Server  LOG      ✓ Compiled in 371ms
-[03:06:11.128] Server  LOG      ✓ Compiled in 396ms
-[03:07:59.070] Server  LOG      ✓ Compiled in 539ms
-[03:07:59.269] Browser ERROR   uncaughtError: Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
-
-Check the render method of `HomePage`.
-[03:08:09.869] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[03:08:09.929] Server  LOG      ✓ Compiled in 318ms
-[03:08:10.749] Server  ERROR   D:\Builds\augu-smart-electronic-service\.next\dev\server\chunks\ssr\_d9c7f03f._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[03:08:10.753] Server  ERROR    ⨯ ReferenceError: CheckCircle is not defined
-[03:08:10.801] Browser ERROR   uncaughtError: ReferenceError: CheckCircle is not defined
-[03:08:11.380] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:08:11.765] Browser ERROR   uncaughtError: ReferenceError: CheckCircle is not defined
-[03:08:36.084] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[03:08:36.103] Server  LOG      ✓ Compiled in 171ms
-[03:08:37.232] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:08:37.550] Browser WARN    Image with src "/printer.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[00:09:52.890] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:09:52.890] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:09:52.890] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764057708738}
+[00:24:21.794] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:24:24.874] Browser ERROR   uncaughtError: SyntaxError: Invalid or unexpected token
+[00:28:49.184] Server  LOG      ✓ Compiled in 321.3s
+[00:31:03.220] Browser ERROR   unhandledRejection: Error: No link element found for chunk /_next/static/chunks/%5Broot-of-the-server%5D__36b083e1._.css
+[00:31:03.220] Browser ERROR   uncaughtError: NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+[00:31:03.221] Browser ERROR   uncaughtError: NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+[00:31:18.178] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:31:23.445] Server  LOG      ✓ Compiled in 153.5s
+[00:31:24.008] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:24.205] Browser WARN    Image with src "/printer.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[03:08:37.550] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:08:37.551] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[03:08:37.551] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763987000038}
-[03:09:05.348] Server  LOG      ✓ Compiled in 169ms
-[03:09:33.449] Server  LOG      ✓ Compiled in 260ms
-[03:09:46.747] Server  LOG      ✓ Compiled in 794ms
+[00:31:24.347] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:31:24.347] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:31:24.347] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764059000206}
+[00:55:39.376] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:57:30.638] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about color: rgb(120, 120, 120) color: inherit {"dp":"/about","o":"http://localhost:3000/about","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764060566493}
+[01:00:28.887] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[01:00:30.246] Server  LOG      ✓ Compiled in 7s
+[01:00:30.701] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:30.939] Browser WARN    Image with src "/printer.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:00:31.071] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:00:31.071] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[01:00:31.071] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764060746928}
+[01:04:35.402] Server  LOG      ✓ Compiled in 244.7s
+[01:04:36.652] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[01:04:52.010] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[01:04:54.603] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:54.855] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:04:54.855] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/about","route":"/about"}
+[01:04:54.855] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about color: rgb(120, 120, 120) color: inherit {"dp":"/about","o":"http://localhost:3000/about","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764061010715}
+[01:06:15.657] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[01:07:04.796] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[01:07:11.048] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[01:07:28.677] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[01:07:57.945] Browser ERROR   uncaughtError: Error: Failed to load chunk /_next/static/chunks/app_layout_tsx_70331b46._.js from module [project]/node_modules/.pnpm/next@16.0.3_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/compiled/react-server-dom-turbopack/cjs/react-server-dom-turbopack-client.browser.development.js [app-client] (ecmascript)
+[01:08:12.182] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:08:12.447] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:08:12.447] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/about","route":"/about"}
+[01:08:12.447] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about color: rgb(120, 120, 120) color: inherit {"dp":"/about","o":"http://localhost:3000/about","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764061208299}
+[01:08:18.521] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:08:18.789] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:08:18.789] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/about","route":"/about"}
+[01:08:18.789] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about color: rgb(120, 120, 120) color: inherit {"dp":"/about","o":"http://localhost:3000/about","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764061214639}
