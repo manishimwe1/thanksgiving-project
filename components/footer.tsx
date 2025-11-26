@@ -1,100 +1,101 @@
-import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube, MapPin, Phone, Mail } from "lucide-react"
 
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className="bg-slate-50 border-t border-slate-200">
-      {/* Decorative Top Bar */}
-      <div className="w-full h-1 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600"></div>
-      
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12">
-          
-          {/* Brand Column (Spans 4 cols) */}
-          <div className="lg:col-span-4">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900 text-white font-bold text-xl">
-                A
+    <footer className="bg-foreground text-background pt-16 pb-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                <svg viewBox="0 0 24 24" className="w-6 h-6 text-primary-foreground" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                </svg>
               </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-xl text-slate-900 leading-none">AUGU</span>
-                <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Electronic Service</span>
-              </div>
+              <span className="text-2xl font-bold">
+                Harvest<span className="text-primary">.</span>
+              </span>
             </div>
-            <p className="text-slate-600 text-sm mb-6 max-w-sm leading-relaxed">
-              We provide professional technology solutions for businesses and individuals across Rwanda. Quality repairs, guaranteed.
+            <p className="text-background/70 text-sm mb-6 leading-relaxed">
+              Premium organic produce for your Thanksgiving celebration. Farm-fresh quality since 1984.
             </p>
-            <div className="flex items-center gap-2 text-sm font-bold text-slate-900 bg-white px-4 py-2 rounded-lg border border-slate-200 w-fit shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-              Technicians Available Now
+            <div className="flex gap-3">
+              {[Facebook, Twitter, Instagram, Youtube].map((Icon, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Quick Links (Spans 2 cols) */}
-          <div className="lg:col-span-2">
-            <h3 className="font-bold text-slate-900 mb-6">Company</h3>
-            <ul className="space-y-3 text-sm">
-              {['Home', 'About Us', 'Services', 'Contact', 'Get a Quote'].map((item) => (
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
+            <ul className="space-y-3">
+              {["About Us", "Our Products", "Recipes", "Blog", "Contact"].map((item) => (
                 <li key={item}>
-                  <Link href={`/${item.toLowerCase().replace(/ /g, '-')}`} className="text-slate-500 hover:text-blue-600 transition-colors block">
+                  <a href="#" className="text-background/70 hover:text-primary transition-colors text-sm">
                     {item}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact (Spans 3 cols) */}
-          <div className="lg:col-span-3">
-            <h3 className="font-bold text-slate-900 mb-6">Get in Touch</h3>
-            <ul className="space-y-4 text-sm">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
-                <span className="text-slate-600">
-                  Norvege (Karama Kigali),<br /> Nyarugenge District
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
-                <div className="text-slate-600 font-medium">
-                  <div>+250 783 432 438</div>
-                  <div>0725 900 732</div>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
-                <a href="mailto:augstinech2015@gmail.com" className="text-slate-600 hover:text-blue-600 transition-colors break-all">
-                  augstinech2015@gmail.com
-                </a>
-              </li>
+          {/* Recent Products */}
+          <div>
+            <h4 className="font-semibold text-lg mb-4">Recent Products</h4>
+            <ul className="space-y-3">
+              {["Organic Vegetables", "Fresh Fruits", "Dairy Products", "Herbs & Spices", "Whole Grains"].map(
+                (item) => (
+                  <li key={item}>
+                    <a href="#" className="text-background/70 hover:text-primary transition-colors text-sm">
+                      {item}
+                    </a>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
 
-          {/* Hours (Spans 3 cols) */}
-          <div className="lg:col-span-3">
-            <h3 className="font-bold text-slate-900 mb-6">Business Hours</h3>
-            <ul className="space-y-2 text-sm">
-              <li className="flex justify-between text-slate-600">
-                <span>Monday - Friday</span>
-                <span className="font-semibold text-slate-900">8:00 AM - 6:00 PM</span>
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <span className="text-background/70 text-sm">123 Harvest Lane, Farm City, FC 12345</span>
               </li>
-              <li className="flex justify-between text-slate-600 border-t border-slate-100 pt-2">
-                <span>Saturday</span>
-                <span className="font-semibold text-slate-900">9:00 AM - 4:00 PM</span>
+              <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-primary shrink-0" />
+                <span className="text-background/70 text-sm">+1 (555) 123-4567</span>
               </li>
-              <li className="flex justify-between text-slate-600 border-t border-slate-100 pt-2">
-                <span>Sunday</span>
-                <span className="font-semibold text-red-500">Closed</span>
+              <li className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-primary shrink-0" />
+                <span className="text-background/70 text-sm">hello@harvest.com</span>
               </li>
             </ul>
           </div>
-
         </div>
 
-        <div className="mt-10 text-center pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-center items-center gap-4 text-sm text-slate-500">
-          <p>&copy; {new Date().getFullYear()} AUGU Smart Electronic Service Ltd.</p>
+        <div className="border-t border-background/10 pt-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-background/50 text-sm">© {new Date().getFullYear()} American Harvest Foods. All rights reserved.</p>
+            <div className="flex gap-6">
+              {["Privacy Policy", "Terms of Service", "Cookies"].map((item) => (
+                <a key={item} href="#" className="text-background/50 hover:text-background text-sm transition-colors">
+                  {item}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </footer>
-  );
+  )
 }

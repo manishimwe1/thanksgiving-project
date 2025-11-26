@@ -1,46 +1,21 @@
-"use client";
+import Header from "@/components/header"
+import Hero from "@/components/hero"
+import Categories from "@/components/categories"
+import Products from "@/components/products"
+import ProductStory from "@/components/product-story"
+import CallToAction from "@/components/call-to-action"
+import Footer from "@/components/footer"
 
-import AboutSection from "@/components/AboutSection";
-import ContactCTA from "@/components/ContactCTA";
-import FAQSection from "@/components/FAQSection";
-import { Footer } from "@/components/footer";
-import HeroSection from "@/components/HeroSection";
-import ProcessSection from "@/components/HowItWork";
-import HighImpactOverlap from "@/components/OverLapping";
-import CompactOverlap from "@/components/OverLapping";
-import OverlappingContact from "@/components/OverLapping";
-import ServicesSection from "@/components/SevicesSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { WhatsAppFloat } from "@/components/whatsapp-float";
-import { Mail, MapPin, Phone } from "lucide-react";
-import Link from "next/link";
-
-export default function HomePage() {
+export default function Home() {
   return (
-    <>
-      <main>
-        {/* Hero Section */}
-        <HeroSection />
-
-        {/* Services Section */}
-        <ServicesSection />
-
-        <ProcessSection/>
-
-        {/* About Section */}
-        <AboutSection />
-
-        <TestimonialsSection/>
-
-        <FAQSection/>
-
-        {/* <ContactCTA/> */}
-        <CompactOverlap/>
-      </main>
+    <main className="min-h-screen bg-background">
+      <Header />
+      <Hero />
+      <Categories />
+      <Products />
+      <ProductStory />
+      <CallToAction />
       <Footer />
-      <WhatsAppFloat />
-    </>
-  );
+    </main>
+  )
 }

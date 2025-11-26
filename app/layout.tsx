@@ -1,71 +1,46 @@
-import type React from "react";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
-import "./globals.css";
-import { Navbar } from "@/components/navbar";
+import type React from "react"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import "./globals.css"
 
-// <CHANGE> Updated font to Inter for professional look
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] })
 
-// <CHANGE> Updated metadata for AUGU company
 export const metadata: Metadata = {
-  title:
-    "AUGU Smart Electronic Service Ltd - Professional Tech Solutions in Kigali",
+  title: "American Harvest Foods - Thanksgiving Celebration",
   description:
-    "Reliable, Fast, and Professional Tech Solutions. Computer repair, CCTV installation, networking, printer repair, and training in Kigali, Rwanda.",
+    "Celebrate the harvest with American Harvest Foods. Discover authentic recipes and premium ingredients for a memorable Thanksgiving.",
   generator: "v0.app",
   icons: {
     icon: [
       {
-        url: "/logo2.png",
+        url: "/icon-light-32x32.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/logo2.png",
+        url: "/icon-dark-32x32.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/logo2.png",
+        url: "/icon.svg",
         type: "image/svg+xml",
       },
     ],
-    apple: "/logo2.png",
+    apple: "/apple-icon.png",
   },
-  openGraph: {
-    title:
-      "AUGU Smart Electronic Service Ltd - Professional Tech Solutions in Kigali",
-    description:
-      "Reliable, Fast, and Professional Tech Solutions. Computer repair, CCTV installation, networking, printer repair, and training in Kigali, Rwanda.",
-    url: 'https://augu-smart-electronics.vercel.app/', // Replace with actual domain
-    type: "website",
-    images: [
-      {
-        url: "/logo2.png", // Use existing high-quality public image
-        width: 1200,
-        height: 630,
-        alt: "AUGU's professional tech repair team working",
-      },
-    ],
-  },
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} font-sans antialiased`}>
-        <main className="flex items-center flex-col w-full h-full">
-          {/* <Header /> */}
-          <Navbar />
-
-          {children}
-        </main>
+      <body className={`${inter.className} antialiased`}>
+        {children}
         <Analytics />
       </body>
     </html>
-  );
+  )
 }
