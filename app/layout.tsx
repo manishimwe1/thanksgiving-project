@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "American Harvest Foods - Thanksgiving Celebration",
   description:
     "Celebrate the harvest with American Harvest Foods. Discover authentic recipes and premium ingredients for a memorable Thanksgiving.",
-  generator: "v0.app",
+  generator: "emino studio",
   icons: {
     icon: [
       {
